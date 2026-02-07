@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dual Player"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:fontFamily="sans-serif-black"
+        android:letterSpacing="0.1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomBar"
+        android:layout_below="@id/title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <RelativeLayout
+                android:id="@+id/deckA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/deck_background"
+                android:padding="16dp"
+                android:layout_marginBottom="15dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DECK 01 // LEFT" android:textColor="#00F2FF" android:textSize="14sp" android:textStyle="bold"/>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true">
+                    <ImageButton android:id="@+id/btnPlayA" android:layout_width="40dp" android:layout_height="40dp" android:background="?attr/selectableItemBackground" android:src="@android:drawable/ic_media_play" app:tint="#00F2FF" />
+                    <ImageButton android:id="@+id/btnLoadA" android:layout_width="40dp" android:layout_height="40dp" android:background="?attr/selectableItemBackground" android:src="@android:drawable/ic_input_add" app:tint="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="45dp" android:gravity="center">
+                    <SeekBar android:id="@+id/seekA" android:layout_width="match_parent" android:layout_height="45dp" android:progressTint="#00F2FF" android:thumbTint="#00F2FF" />
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="10dp">
+                        <TextView android:id="@+id/timeA_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:textColor="#FFFFFF" android:textSize="16sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/timeA_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="00:00" android:textColor="#FFFFFF" android:textSize="16sp" android:fontFamily="monospace"/>
+                    </RelativeLayout>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VOLUME CONTROL" android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" android:layout_marginTop="15dp"/>
+                    <SeekBar android:id="@+id/volumeA" android:layout_width="match_parent" android:layout_height="45dp" android:max="100" android:progress="100" android:progressTint="#00F2FF" android:thumbTint="#00F2FF" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout android:id="@+id/deckB" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/deck_background" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DECK 02 // RIGHT" android:textColor="#FF00E5" android:textSize="14sp" android:textStyle="bold"/>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true">
+                    <ImageButton android:id="@+id/btnPlayB" android:layout_width="40dp" android:layout_height="40dp" android:background="?attr/selectableItemBackground" android:src="@android:drawable/ic_media_play" app:tint="#FF00E5" />
+                    <ImageButton android:id="@+id/btnLoadB" android:layout_width="40dp" android:layout_height="40dp" android:background="?attr/selectableItemBackground" android:src="@android:drawable/ic_input_add" app:tint="#FFFFFF" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="45dp" android:gravity="center">
+                    <SeekBar android:id="@+id/seekB" android:layout_width="match_parent" android:layout_height="45dp" android:progressTint="#FF00E5" android:thumbTint="#FF00E5" />
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="10dp">
+                        <TextView android:id="@+id/timeB_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:textColor="#FFFFFF" android:textSize="16sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/timeB_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="00:00" android:textColor="#FFFFFF" android:textSize="16sp" android:fontFamily="monospace"/>
+                    </RelativeLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VOLUME CONTROL" android:textColor="#FFFFFF" android:textSize="14sp" android:textStyle="bold" android:layout_marginTop="15dp"/>
+                    <SeekBar android:id="@+id/volumeB" android:layout_width="match_parent" android:layout_height="45dp" android:max="100" android:progress="100" android:progressTint="#FF00E5" android:thumbTint="#FF00E5" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true"
+        android:background="#111111"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/btnPlayPause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/deck_background"
+            android:backgroundTint="#333333"
+            android:src="@android:drawable/ic_media_play"
+            app:tint="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:padding="15dp"/>
+    </LinearLayout>
+</RelativeLayout>
