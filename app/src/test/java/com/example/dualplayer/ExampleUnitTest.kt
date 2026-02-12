@@ -1,4 +1,4 @@
-package com.example.dualplayer
+package com.killmonger161.dualplayer
 
 import org.junit.Test
 

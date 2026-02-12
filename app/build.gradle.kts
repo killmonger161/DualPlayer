@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.dualplayer"
+    namespace = "com.killmonger161.dualplayer"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.dualplayer"
+        applicationId = "com.killmonger161.dualplayer"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
